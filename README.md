@@ -1,6 +1,10 @@
 # assignment-3-IOT451
 data analytics on childrens health inequality
 
+My Analysis:
+The bar chart demonstrates the disparities in health perceptions across the selected boroughs. More affluent boroughs, such as Richmond upon Thames and Kingston upon Thames report the highest percentages of teens describing their general health as excellent, whilst less affluent areas like Tower Hamlets and Hackney have lower percentages. This emphasises how more poverty-stricken boroughs tend to have more health implications, possibly due to fewer aiding facilities available to children. It may seem conflicting how  affluent boroughs display higher percentages of residents with long-term illnesses or disabilities, however this could be due to these areas having more private healthcare and access to doctors, thus leading to fast treatment and services. These findings highlight the need for targeted public health interventions for children in less affluent boroughs to address disparities and promote equitable health outcomes.
+
+Code:
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -21,7 +25,7 @@ filtered_data = data[(data["Area Name"].isin(filtered_areas)) & (data["Indicator
 bar_width = 0.30  # width of the bars
 index = np.arange(len(pivot_data.index))  # borough positioning
 
-# show a bar for each indicator
+#show a bar for each indicator
 fig, ax = plt.subplots(figsize=(9, 7))
 for i, indicator in enumerate(indicators_of_interest):
     ax.bar(
@@ -44,6 +48,3 @@ ax.grid(axis='y', linestyle='-', alpha=0.7)
 plt.tight_layout()
 plt.show()
 
-
-My Analysis:
-The bar chart demonstrates the disparities in health perceptions across the selected boroughs. More affluent boroughs, such as Richmond upon Thames and Kingston upon Thames report the highest percentages of teens describing their general health as excellent, whilst less affluent areas like Tower Hamlets and Hackney have lower percentages. This emphasises how more poverty-stricken boroughs tend to have more health implications, possibly due to fewer aiding facilities available to children. It may seem conflicting how  affluent boroughs display higher percentages of residents with long-term illnesses or disabilities, however this could be due to these areas having more private healthcare and access to doctors, thus leading to fast treatment and services. These findings highlight the need for targeted public health interventions for children in less affluent boroughs to address disparities and promote equitable health outcomes.
