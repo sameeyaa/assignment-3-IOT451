@@ -5,7 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Load the dataset
+#Load the dataset
 data = pd.read_csv('borough.csv')
 
 #areas we are looking at
@@ -14,10 +14,10 @@ filtered_areas = ["Tower Hamlets", "Newham", "Hackney","Kingston upon Thames", "
 #indicators i focused on
 filtered_indicators = ["Percentage reporting general health as excellent","Percentage of those with a long-term illness, disability or medical condition diagnosed by a doctor"]
 
-# filter the dataset for the relevant areas and indicators
+#filter the dataset for the relevant areas and indicators
 filtered_data = data[(data["Area Name"].isin(filtered_areas)) & (data["Indicator"].isin(filtered_indicators))]
 
-# Create a bar chart
+#Create a bar chart
 bar_width = 0.30  # width of the bars
 index = np.arange(len(pivot_data.index))  # borough positioning
 
@@ -40,7 +40,7 @@ ax.set_xticklabels(pivot_data.index, rotation=45, fontsize=10)
 ax.legend(fontsize=10)
 ax.grid(axis='y', linestyle='-', alpha=0.7)
 
-# Show the plot
+#Show the plot
 plt.tight_layout()
 plt.show()
 
